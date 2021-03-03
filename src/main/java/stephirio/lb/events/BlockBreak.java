@@ -42,7 +42,7 @@ public class BlockBreak implements Listener {
                 ConfigurationSection broken_conf = config.getConfigurationSection(broken_block);
                 ArrayList<String> prizes = new ArrayList<>();
 
-                if (player.hasPermission(broken_block)) {
+                if (player.hasPermission("lp." + broken_block)) {
                     for (String prize : config.getConfigurationSection(broken_block).getKeys(false)) {
                         if (!prize.equals("permission")) {
                             Integer percentage = Integer.valueOf(broken_conf.getConfigurationSection(prize).getString("percentage").replace("%", ""));
@@ -118,6 +118,9 @@ public class BlockBreak implements Listener {
                     TokenEnchantAPI teAPI = TokenEnchantAPI.getInstance();
 
                     if (chosen_prize.getKeys(false).contains("tokens")) teAPI.addTokens(player, chosen_prize.getInt("tokens"));
+                } else {
+                    event.getBlock().setType(Material.NOTE_BLOCK);
+                    event.setCancelled(true);
                 }
             }
         }

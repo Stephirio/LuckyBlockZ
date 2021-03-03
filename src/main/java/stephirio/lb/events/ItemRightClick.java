@@ -10,7 +10,6 @@ import stephirio.lb.Main;
 
 
 /** When a player right clicks with an item in hand and sneaking.
- * @deprecated This works with only one plugin. We're working to make it in our plugin.
  * */
 public class ItemRightClick implements Listener {
 

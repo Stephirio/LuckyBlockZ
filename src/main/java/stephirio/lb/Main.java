@@ -31,7 +31,7 @@ public final class Main extends JavaPlugin {
 
     public static ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
     public static Economy econ = null;
-    private Integer pluginID = 85779;
+    private Integer pluginID = 89700;
 
 
     @Override
@@ -41,7 +41,7 @@ public final class Main extends JavaPlugin {
         reloadConfig();
         getServer().getPluginManager().registerEvents(new BlockBreak(this), this);
         getCommand("lb").setExecutor(new LB(this));
-        // getServer().getPluginManager().registerEvents(new ItemRightClick(this), this);    // Not working yet. Coming soon...
+        getServer().getPluginManager().registerEvents(new ItemRightClick(this), this);    // Not working yet. Coming soon...
         if (!setupEconomy() ) getServer().getPluginManager().disablePlugin(this);
         new UpdateChecker(this, pluginID).getLatestVersion(version -> {
             if(this.getDescription().getVersion().equalsIgnoreCase(version))
