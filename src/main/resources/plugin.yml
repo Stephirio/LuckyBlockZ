@@ -1,0 +1,33 @@
+name: LuckyBlockZ
+version: ${project.version}
+main: stephirio.lb.Main
+api-version: 1.15
+authors: [ Stephirio, ogaz_zago ]
+depend: [ Vault, TokenEnchant ]
+description: A simple LuckyBlock plugin made for ogaz_zago's server.
+commands:
+  lb:
+    description: The main command of the plugin.
+    aliases: [ luckyblock, luckyblockz ]
+  lb reload:
+    description: Reloads the configuration files of the plugin.
+permissions:
+  lb.*:
+    default: false
+    children:
+      lb.all: true
+  lb.all:
+    default: false
+    children:
+      lb.broadcast: true
+      lb.<block-name>: true
+      lb.outdated_warning: true
+  lb.broadcast:
+    default: true
+    description: This permission allows players to see the broadcasts from the plugin.
+  lb.<block-name>:
+    default: false
+    description: Allows a player to use a certain command block.
+  lb.outdated_warning:
+    default: false
+    description: This permission allows to be warned whenever the plugin is outdated. We suggest giving it to staff (developers, administrators, owners).

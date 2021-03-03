@@ -1,0 +1,69 @@
+#  LLLLLLLLLLL                   BBBBBBBBBBBBBBBBB        ZZZZZZZZZZZZZZZZZZZ
+#    L:::::::::L                   B::::::::::::::::B    Z::::::::::::::::::::Z
+#    L:::::::::L                   B::::::BBBBBB:::::B   Z:::::::::::::::::::::Z
+#    LL:::::::LL                   BB:::::B     B:::::B  Z:::::ZZZZZZZZ:::::Z
+#    L:::::L                       B::::B     B:::::B     ZZZZZ     Z:::::Z
+#    L:::::L                       B::::B     B:::::B             Z:::::Z
+#    L:::::L                       B::::BBBBBB:::::B             Z:::::Z
+#    L:::::L                       B:::::::::::::BB             Z:::::Z
+#    L:::::L                       B::::BBBBBB:::::B           Z:::::Z
+#    L:::::L                       B::::B     B:::::B          Z:::::Z
+#    L:::::L                      B::::B     B:::::B           Z:::::Z
+#    L:::::L         LLLLLL        B::::B     B:::::B         ZZ:::::Z     ZZZZZ
+#    LL:::::::LLLLLLLLL:::::L     BB:::::BBBBBB::::::B        Z::::::ZZZZZZZZ:::Z
+#    L::::::::::::::::::::::L     B:::::::::::::::::B         Z:::::::::::::::::Z
+#    L::::::::::::::::::::::L     B::::::::::::::::B          Z:::::::::::::::::Z
+#    LLLLLLLLLLLLLLLLLLLLLLLL     BBBBBBBBBBBBBBBBB           ZZZZZZZZZZZZZZZZZZZ
+
+# Made by Stephirio on the ogaz_zago's computer (don't ask how).
+# Made for fun. There are some funny phrases and words.
+
+
+
+chat_prefix: '&8&l[&r&6Lucky&eBlock&6&lZ&8&l] '        # The prefix to be shown in the chat before LuckyBlockZ messages. If you don't want it just put ''
+
+full_inventory_title: '&4&lInventory full'
+full_inventory_subtitle: '&2Your inventory is full. Please free some space before breaking the luckyblock.'
+
+lucky-setup:
+  note_block:         # The lucky block. In this example it is note_block but you can put any block you want.
+
+    prize1:           # A name for the prize. In this example it is prize1 but you can put any other name.
+      percentage: 50%           # The probability for the player who breaks the lucky block to get the prize.
+      items:                    # A list of items that will be given to the player. (Optional)
+        diamond:                # One of the items that the player can get. It can be any item
+          amount: 2
+          name: '&2&lReally &4expensive &2stone'             # A custom name can be set for the item. (Optional)
+          lore:                                              # Custom lores are also available. (Optional)
+            - 'Do u want a house?'
+            - 'Do u want a car?'
+            - 'Use this and u re done!'
+      commands:                                              # Multiple commands can be executed when a block is broken.
+        - 'say Hi, the plugin works'
+        - 'give iron_sword 1'
+      message: 'Nice stone, bro!'                   # A message that will be sent to the player. (Optional)
+      broadcast: '%player% just became rich!'       # Broadcasts a message to the whole server. (Optional)
+      sound: 'ENTITY_FIREWORK_ROCKET_LAUNCH'        # Sounds can be used. (Optional)   -  A list of the available sound can be found here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+      effects:                # When breaking a lucky block some effects can be shown. (Optional)
+        fireworks:            # Spawns fireworks. (Optional)
+          amount: 2
+          color:
+            R: 255
+            G: 170
+            B: 0
+          power: 1            # How far must the fireworks fly. Available values: 1, 2 or 3
+        explosion:            # A simple explosion (Optional)
+          size: LARGE         # The size of the explosion. It can be NORMAL, HUGE or LARGE.
+          amount: 2           # Explosions can be stacked.
+        custom:                             # It is possible to create custom effects using particles. (Optional)
+          particle: 'WATER_BUBBLE'          # The particle to be shown. A list of the available particles can be found here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+          amount: 5                         # How many particles you want? They can be stacked, just like explosions.
+          height: 0.6                       # The height of the particle to show. 1 is on top of the broken lucky block, 0 on bottom.
+      tokens: 50              # You can give tokens but you must have TokenEnchant plugin.
+      money: 400.50           # Give money using Vault plugin.
+
+
+    prize2:                # You can have as many prizes as you please.
+      percentage: 50%
+      message: 'Nothing found. 404'
+      sound: 'ENTITY_PLAYER_HURT'
